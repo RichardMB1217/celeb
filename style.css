@@ -1,0 +1,85 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 5px;
+  width: 200px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 5px 10px;
+}
+
+#celebGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.celeb-item {
+  cursor: pointer;
+}
+
+.celeb-item-inner {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.celeb-item-inner img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.celeb-item-inner p {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin: 0;
+  padding: 5px;
+}
+
+#imageResults {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.media {
+  margin: 10px;
+  overflow: hidden;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 100%;
+  text-align: center;
+}
+
+.media img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+}
