@@ -4,7 +4,11 @@ let isTyping = false;
 document.addEventListener('keydown', e => {
   const index = e.key;
 
-  if (/^[a-zA-Z0-9\s()-]$/.test(index)) {
+  if (e.ctrlKey || e.metaKey) {
+
+  }
+
+  if (/^[a-zA-Z0-9\s()-]$/.test(index) && !e.ctrlKey && !e.metaKey) {
     search_keyword += index.toLowerCase();
     isTyping = true;
 
