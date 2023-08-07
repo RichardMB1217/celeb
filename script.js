@@ -1,5 +1,16 @@
 var loading = false;
 var after = '';
+var subreddit = '';
+
+function isInViewport(element) {
+  var rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -19,9 +30,8 @@ function shuffleSelectionTiles() {
 }
 
 window.addEventListener('load', function() {
-  document.getElementById('imageResults').innerHTML = '';
-
   shuffleSelectionTiles();
+  document.getElementById('imageResults').innerHTML = '';
 });
 
 var firstImageUrls = { url1: '', url2: '' };
@@ -31,6 +41,7 @@ function loadPosts(subreddit, after = '') {
   loading = true;
 
   var url1 = `https://www.reddit.com/r/celebhub+celebnsfw/search.json?q=${subreddit}&restrict_sr=on&sort=top&include_over_18=true&after=${after}`;
+  // var url2 = ''
   var url2 = `https://www.reddit.com/r/${subreddit.replace(/\s/g, '')}.json?sort=top&include_over_18=true&after=${after}`;
 
   fetch(url1)
@@ -81,7 +92,6 @@ function processFetchedData(data) {
 
   var children = data.data.children;
 
-  // Shuffle the children array
   shuffleArray(children);
 
   children.forEach(function(child) {
@@ -96,17 +106,19 @@ function processFetchedData(data) {
         var imageWidth = tempImage.width;
         var imageHeight = tempImage.height;
 
-        if (imageWidth !== 161 || imageHeight !== 81) {
-          var mediaContainer = document.createElement('div');
-          mediaContainer.className = 'media';
+        if (imageWidth > 180 && imageHeight > 100) {
+          if (isInViewport(tempImage)) {
+            var mediaContainer = document.createElement('div');
+            mediaContainer.className = 'media';
 
-          var media = document.createElement('img');
-          media.src = mediaUrl;
-          media.alt = child.data.title;
-          media.style.maxHeight = '80vh';
-          mediaContainer.appendChild(media);
+            var media = document.createElement('img');
+            media.src = mediaUrl;
+            media.alt = child.data.title;
+            media.style.maxHeight = '80vh';
+            mediaContainer.appendChild(media);
 
-          imageResults.appendChild(mediaContainer);
+            imageResults.appendChild(mediaContainer);
+          }
         }
       };
     }
@@ -115,19 +127,27 @@ function processFetchedData(data) {
   loading = false;
 }
 
+
 window.addEventListener('scroll', function() {
   var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
   var scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
   var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
 
-  if (scrollTop + clientHeight >= scrollHeight - 1500) {
+  if (scrollTop + clientHeight >= scrollHeight - 2000) {
     loadPosts(subreddit, after);
   }
 });
 
-var subreddit = '';
+function showCelebrityImages(celebrityName, celebrityNameElement) {
+  clearSearch()
+  var celebName = celebrityNameElement.textContent.trim();
+  var pageTitle = "Celeb Hub - " + celebName;
+  var h1Element = document.querySelector("h1");
+  var pageTitleElement = document.querySelector("title");
 
-function showCelebrityImages(celebrityName) {
+  h1Element.textContent = pageTitle;
+  pageTitleElement.textContent = pageTitle;
+  
   subreddit = celebrityName;
   after = '';
   imageResults.innerHTML = '';
