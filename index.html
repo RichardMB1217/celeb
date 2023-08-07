@@ -5,10 +5,10 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <h1>Celeb Hub</h1>
+  <h1 id="pageTitle">Celeb Hub</h1>
   <div class="celeb-grid" id="celebGrid">
     <!-- Selena Gomez -->
-    <div class="celeb-item" onclick="showCelebrityImages('Selena Gomez')">
+    <div class="celeb-item" onclick="showCelebrityImages('Selena Gomez', this.querySelector('p'))">
       <div class="celeb-item-inner">
         <img src="https://i.redd.it/epb6ok4357gb1.jpg" alt="Selena Gomez">
         <p>Selena Gomez</p>
@@ -16,7 +16,7 @@
     </div>
 
     <!-- Emma Watson -->
-    <div class="celeb-item" onclick="showCelebrityImages('Emma Watson')">
+    <div class="celeb-item" onclick="showCelebrityImages('Emma Watson', this.querySelector('p'))">
       <div class="celeb-item-inner">
         <img src="https://i.redd.it/lmosxwpwlbgb1.jpg" alt="Emma Watson">
         <p>Emma Watson</p>
@@ -24,7 +24,7 @@
     </div>
 
     <!-- Addison Rae -->
-    <div class="celeb-item" onclick="showCelebrityImages('Addison Rae')">
+    <div class="celeb-item" onclick="showCelebrityImages('Addison Rae', this.querySelector('p'))">
       <div class="celeb-item-inner">
         <img src="https://i.redd.it/u0z2ij2q34fb1.jpg" alt="Addison Rae">
         <p>Addison Rae</p>
@@ -32,7 +32,7 @@
     </div>
 
     <!-- Natalie Portman -->
-    <div class="celeb-item" onclick="showCelebrityImages('Natalie Portman')">
+    <div class="celeb-item" onclick="showCelebrityImages('Natalie Portman', this.querySelector('p'))">
       <div class="celeb-item-inner">
         <img src="https://i.redd.it/xvag28js16db1.jpg" alt="Natalie Portman">
         <p>Natalie Portman</p>
@@ -40,14 +40,311 @@
     </div>
 
     <!-- Ariana Grande -->
-    <div class="celeb-item" onclick="showCelebrityImages('Ariana Grande')">
+    <div class="celeb-item" onclick="showCelebrityImages('Ariana Grande', this.querySelector('p'))">
       <div class="celeb-item-inner">
         <img src="https://i.redd.it/japk2yfnvj2b1.jpg" alt="Ariana Grande">
         <p>Ariana Grande</p>
       </div>
     </div>
+
+    <!-- Melissa Fumero -->
+    <div class="celeb-item" onclick="showCelebrityImages('Melissa Fumero', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/bxxsjirhnypa1.jpg" alt="Melissa Fumero">
+        <p>Melissa Fumero</p>
+      </div>
+    </div>
+
+    <!-- Ana de Armas -->
+    <div class="celeb-item" onclick="showCelebrityImages('Ana de Armas', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/42sbyv5jpbgb1.jpg" alt="Ana de Armas">
+        <p>Ana de Armas</p>
+      </div>
+    </div>
+
+    <!-- Margot Robbie -->
+    <div class="celeb-item" onclick="showCelebrityImages('Margot Robbie', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/7zx0ym8t9rdb1.jpg" alt="Margot Robbie">
+        <p>Margot Robbie</p>
+      </div>
+    </div>
+
+    <!-- Amber Heard -->
+    <div class="celeb-item" onclick="showCelebrityImages('Amber Heard', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/0g4zyky7qbj21.png" alt="Amber Heard">
+        <p>Amber Heard</p>
+      </div>
+    </div>
+
+    <!-- Penelope Cruz -->
+    <div class="celeb-item" onclick="showCelebrityImages('Penelope Cruz', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/34lpxr655m2a1.jpg" alt="Penelope Cruz">
+        <p>Penelope Cruz</p>
+      </div>
+    </div>
+
+    <!-- Taylor Swift -->
+    <div class="celeb-item" onclick="showCelebrityImages('Taylor Swift Pictures', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/lbeolvpeofp81.jpg" alt="Taylor Swift">
+        <p>Taylor Swift</p>
+      </div>
+    </div>
+
+    <!-- Sarah Hyland -->
+    <div class="celeb-item" onclick="showCelebrityImages('Sarah Hyland', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/i2up7yb52u651.jpg" alt="Sarah Hyland">
+        <p>Sarah Hyland</p>
+      </div>
+    </div>
+
+    <!-- Scarlett Johansson -->
+    <div class="celeb-item" onclick="showCelebrityImages('Scarlett Johansson', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/87amv6dlusfb1.jpg" alt="Scarlett Johansson">
+        <p>Scarlett Johansson</p>
+      </div>
+    </div>
+
+    <!-- Natalie Dormer -->
+    <div class="celeb-item" onclick="showCelebrityImages('Natalie Dormer', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/mugc4kzgofbb1.jpg" alt="Natalie Dormer">
+        <p>Natalie Dormer</p>
+      </div>
+    </div>
+
+    <!-- Jennifer Lawrence -->
+    <div class="celeb-item" onclick="showCelebrityImages('Jennifer Lawrence', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/kpnmjkez0sdb1.jpg" alt="Jennifer Lawrence">
+        <p>Jennifer Lawrence</p>
+      </div>
+    </div>
+
+    <!-- Emma Stone -->
+    <div class="celeb-item" onclick="showCelebrityImages('Emma Stone', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.imgur.com/Bm7WY3U.jpg" alt="Emma Stone">
+        <p>Emma Stone</p>
+      </div>
+    </div>
+
+    <!-- Keira Knightley -->
+    <div class="celeb-item" onclick="showCelebrityImages('Keira Knightley', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/yuh2h63q0gva1.jpg" alt="Keira Knightley">
+        <p>Keira Knightley</p>
+      </div>
+    </div>
+
+    <!-- Kristen Stewart -->
+    <div class="celeb-item" onclick="showCelebrityImages('Kristen Stewart', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/jug13eczrlqa1.jpg" alt="Kristen Stewart">
+        <p>Kristen Stewart</p>
+      </div>
+    </div>
+
+    <!-- Elle Fanning -->
+    <div class="celeb-item" onclick="showCelebrityImages('Elle Fanning', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/261gdcdi2mbb1.jpg" alt="Elle Fanning">
+        <p>Elle Fanning</p>
+      </div>
+    </div>
+
+    <!-- Saoirse Ronan -->
+    <div class="celeb-item" onclick="showCelebrityImages('Saoirse Ronan', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/zo1umrmuges91.jpg" alt="Saoirse Ronan">
+        <p>Saoirse Ronan</p>
+      </div>
+    </div>
+
+    <!-- Brie Larson -->
+    <div class="celeb-item" onclick="showCelebrityImages('Brie Larson', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/e13gapgcardb1.jpg" alt="Brie Larson">
+        <p>Brie Larson</p>
+      </div>
+    </div>
+
+    <!-- Hailee Steinfeld -->
+    <div class="celeb-item" onclick="showCelebrityImages('Hailee Steinfeld', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/2b15cn648leb1.jpg" alt="Hailee Steinfeld">
+        <p>Hailee Steinfeld</p>
+      </div>
+    </div>
+
+    <!-- Chloe Grace Moretz -->
+    <div class="celeb-item" onclick="showCelebrityImages('Chloe Grace Moretz', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/ya4ecitw6z3b1.jpg" alt="Chloe Grace Moretz">
+        <p>Chloe Grace Moretz</p>
+      </div>
+    </div>
+
+    <!-- Zendaya -->
+    <div class="celeb-item" onclick="showCelebrityImages('Zendaya', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/k04kt21hxlr91.jpg" alt="Zendaya">
+        <p>Zendaya</p>
+      </div>
+    </div>
+
+    <!-- Amy Adams -->
+    <div class="celeb-item" onclick="showCelebrityImages('Amy Adams', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/ilt0xihhgebb1.jpg" alt="Amy Adams">
+        <p>Amy Adams</p>
+      </div>
+    </div>
+
+    <!-- Anne Hathaway -->
+    <div class="celeb-item" onclick="showCelebrityImages('Anne Hathaway', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/tpexed58wycb1.jpg" alt="Anne Hathaway">
+        <p>Anne Hathaway</p>
+      </div>
+    </div>
+
+    <!-- Jennifer Aniston -->
+    <div class="celeb-item" onclick="showCelebrityImages('Jennifer Aniston', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/odrljlxrf5fb1.jpg" alt="Jennifer Aniston">
+        <p>Jennifer Aniston</p>
+      </div>
+    </div>
+
+    <!-- Angelina Jolie -->
+    <div class="celeb-item" onclick="showCelebrityImages('Angelina Jolie', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/mnf9ohq3l2qa1.png" alt="Angelina Jolie">
+        <p>Angelina Jolie</p>
+      </div>
+    </div>
+
+    <!-- Megan Fox -->
+    <div class="celeb-item" onclick="showCelebrityImages('Megan Fox', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/j8exkhm6kjfb1.jpg" alt="Megan Fox">
+        <p>Megan Fox</p>
+      </div>
+    </div>
+
+    <!-- Cameron Diaz -->
+    <div class="celeb-item" onclick="showCelebrityImages('Cameron Diaz', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/4iv5w351ygo61.jpg" alt="Cameron Diaz">
+        <p>Cameron Diaz</p>
+      </div>
+    </div>
+
+    <!-- Gwyneth Paltrow -->
+    <div class="celeb-item" onclick="showCelebrityImages('Gwyneth Paltrow', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/r5vtn3ra3en31.jpg" alt="Gwyneth Paltrow">
+        <p>Gwyneth Paltrow</p>
+      </div>
+    </div>
+
+    <!-- Jessica Chastain -->
+    <div class="celeb-item" onclick="showCelebrityImages('Jessica Chastain', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/nzalten9o7bb1.jpg" alt="Jessica Chastain">
+        <p>Jessica Chastain</p>
+      </div>
+    </div>
+
+    <!-- Eva Green -->
+    <div class="celeb-item" onclick="showCelebrityImages('Eva Green', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/pqzs0w1lspza1.jpg" alt="Eva Green">
+        <p>Eva Green</p>
+      </div>
+    </div>
+
+    <!-- Sofia Vergara -->
+    <div class="celeb-item" onclick="showCelebrityImages('Sofia Vergara', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/ed8o4idf0kya1.jpg" alt="Sofia Vergara">
+        <p>Sofia Vergara</p>
+      </div>
+    </div>
+
+    <!-- Gal Gadot -->
+    <div class="celeb-item" onclick="showCelebrityImages('Gal Gadot', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/zh5oh8ti00c91.jpg" alt="Gal Gadot">
+        <p>Gal Gadot</p>
+      </div>
+    </div>
+
+    <!-- Elizabeth Olsen -->
+    <div class="celeb-item" onclick="showCelebrityImages('Elizabeth Olsen', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/8zo6zl5jyyo31.jpg" alt="Elizabeth Olsen">
+        <p>Elizabeth Olsen</p>
+      </div>
+    </div>
+
+    <!-- Emily Ratajkowski -->
+    <div class="celeb-item" onclick="showCelebrityImages('Emily Ratajkowski', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/stzzzxeiuqeb1.jpg" alt="Emily Ratajkowski">
+        <p>Emily Ratajkowski</p>
+      </div>
+    </div>
+
+    <!-- Cara Delevingne -->
+    <div class="celeb-item" onclick="showCelebrityImages('Cara Delevingne', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/ly3qmdtugu3a1.jpg" alt="Cara Delevingne">
+        <p>Cara Delevingne</p>
+      </div>
+    </div>
+
+    <!-- Lily James -->
+    <div class="celeb-item" onclick="showCelebrityImages('Lily James', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/hlqzrz28hhba1.jpg" alt="Lily James">
+        <p>Lily James</p>
+      </div>
+    </div>
+
+    <!-- Emilia Clarke -->
+    <div class="celeb-item" onclick="showCelebrityImages('Emilia Clarke', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/8u8x1de4qwfb1.jpg" alt="Emilia Clarke">
+        <p>Emilia Clarke</p>
+      </div>
+    </div>
+
+    <!-- Sophie Turner -->
+    <div class="celeb-item" onclick="showCelebrityImages('Sophie Turner', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/kgbb1swz9al91.jpg" alt="Sophie Turner">
+        <p>Sophie Turner</p>
+      </div>
+    </div>
+
+    <!-- Rose Leslie -->
+    <div class="celeb-item" onclick="showCelebrityImages('Rose Leslie', this.querySelector('p'))">
+      <div class="celeb-item-inner">
+        <img src="https://i.redd.it/2f0uqexhevy81.jpg" alt="Rose Leslie">
+        <p>Rose Leslie</p>
+      </div>
+    </div>
   </div>
   <div id="imageResults"></div>
-  <script src="script.js"></script>
+  <script src="script.js?v=1.0"></script>
+  <script src="search.js"></script>
 </body>
 </html>
