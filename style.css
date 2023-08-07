@@ -83,3 +83,35 @@ button {
   max-height: 80vh;
   object-fit: contain;
 }
+
+/* Include the provided CSS in your existing style.css file or add it in a new CSS file */
+
+#search-box {
+  position: fixed;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: calc(var(--navHeight) * -1);
+  background: var(--lightbg);
+  border: 2px solid var(--green);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 0 15px 0 var(--shadow);
+  transition: top 1s;
+  height: 100%;
+}
+
+#search-box.active-search {
+  top: calc(var(--navHeight) + 10px);
+}
+
+#search-input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-size: 1.5rem;
+  color: var(--textColor);
+  width: 100%;
+  pointer-events: none;
+}
