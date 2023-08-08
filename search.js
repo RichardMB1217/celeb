@@ -3,12 +3,18 @@ let isTyping = false;
 
 document.addEventListener('keydown', e => {
   const index = e.key;
+  
+  if (/^[a-zA-Z0-9\s()-]$/.test(index) && !e.ctrlKey && !e.metaKey && index != "Enter") {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  if (e.ctrlKey || e.metaKey) {
-
-  }
-
-  if (/^[a-zA-Z0-9\s()-]$/.test(index) && !e.ctrlKey && !e.metaKey) {
+    imageResults.innerHTML = '';
+    displayedImages = new Set();
+    children = ''
+    document.getElementById('imageResults').style.display = 'none';
+    
+    firstImageUrls = { url1: '', url2: '' };
+    document.querySelector("title").textContent = 'Celeb Hub'
+    document.getElementById('celebGrid').style.display = 'grid';
     search_keyword += index.toLowerCase();
     isTyping = true;
 
@@ -68,7 +74,7 @@ function searchCelebrities(keyword) {
   for (let i = 0; i < celebItems.length; i++) {
     var celebItem = celebItems[i];
     var celebNameElement = celebItem.querySelector('p');
-    var celebName = celebNameElement.textContent.toLowerCase();
+    var celebName = celebNameElement.textContent.normalize('NFD').toLowerCase();
 
     if (celebName.includes(keyword)) {
       celebItem.style.display = 'block';
@@ -81,7 +87,7 @@ function searchCelebrities(keyword) {
 function selectFirstVisibleCelebrity() {
   var celebGrid = document.getElementById('celebGrid');
   var celebItems = celebGrid.getElementsByClassName('celeb-item');
-
+  
   for (let i = 0; i < celebItems.length; i++) {
     var celebItem = celebItems[i];
 
